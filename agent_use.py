@@ -1,8 +1,8 @@
 import threading
 import openai
 import json
-
-class gpt_agent():
+# from syslogger import logger
+class GptAgent():
     
     def __init__(self,model_name,key="none"):
         self.api_dic = {'chatglm2-6b':"http://localhost:8000/v1"}
