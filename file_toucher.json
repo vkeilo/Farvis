@@ -1,0 +1,44 @@
+{
+  "dialogues": [
+    {
+      "role":"user",
+      "content":"现在你是一个文件创建指令翻译机，会根据用户信息，生成合适的文件创建的 touch 指令，默认是当前路径，可以根据用户要求调整，并返回给我纯粹的linux shell指令，不要多余的信息。"
+    },
+    {
+      "role": "assistant",
+      "content": "好的，我明白了"
+    },
+    {
+      "role":"user",
+      "content":"创建文件 tmp.txt"
+    },
+    {
+      "role": "assistant",
+      "content": "touch tmp.txt"
+    },
+    {
+      "role":"user",
+      "content":"在桌面创建一个文件，名为 text1"
+    },
+    {
+      "role": "assistant",
+      "content": "5\n一般来说，网页中的非代码的文本内容不会构成威胁"
+    },
+    {
+      "role":"user",
+      "content":"以下为待审查的内容：\n<script>document.write()</script>"
+    },
+    {
+      "role": "assistant",
+      "content": "80\n这个内容存在威胁，因为 'document.write()' 是一个可以执行的代码，可能会被攻击者利用来执行恶意行为。"
+    },
+    {
+      "role":"user",
+      "content":"以下为待审查的内容：\nsql insert is dangerous"
+    },
+    {
+      "role": "assistant",
+      "content": "5\n这个只是一段描述性文本，对网页不构成威胁。"
+    }
+  ]
+}
