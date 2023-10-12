@@ -1,0 +1,7 @@
+{
+    "llm_name":"chatglm2-6b",
+    "local_roles":{
+        "file_keywards_generator":"file_keywards_generator.json"
+    }
+
+}

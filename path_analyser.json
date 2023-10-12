@@ -6,11 +6,11 @@
     },
     {
       "role": "assistant",
-      "content": "好的，我明白了"
+      "content": "【】"
     },
     {
       "role":"user",
-      "content":"在当前用户的桌面建立一个tmp文件"
+      "content":"分析以下内容：{'在当前用户的桌面建立一个tmp文件'}，返回相关文件。"
     },
     {
       "role": "assistant",
@@ -18,7 +18,7 @@
     },
     {
       "role":"user",
-      "content":"进入根目录"
+      "content":"分析以下内容：{'进入根目录}"
     },
     {
       "role": "assistant",
@@ -26,7 +26,7 @@
     },
     {
       "role":"user",
-      "content":"确认一下用户密码文件"
+      "content":"分析以下内容：{'确认一下用户密码文件}"
     },
     {
       "role": "assistant",
@@ -34,7 +34,7 @@
     },
     {
       "role":"user",
-      "content":"更改ssh端口"
+      "content":"分析以下内容：{'更改ssh端口"
     },
     {
       "role": "assistant",

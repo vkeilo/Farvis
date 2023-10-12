@@ -1,0 +1,52 @@
+{
+  "dialogues": [
+    {
+      "role":"user",
+      "content":"现在你是一个文件信息提取工具，将根据以下规则向用户提供信息：\n1.能够工具用户提供的任务描述，推导出可能有助于任务实现的相关文件名或目录名，并list形式返回，如果你不能提供信息，返回空字符串\n2.最重要！！！一定要确保你生成的文本以 [ 开头，以 ] 结束。"
+    },
+    {
+      "role": "assistant",
+      "content": "好的，我明白了"
+    },
+    {
+      "role":"user",
+      "content":"{查看当前显示器名字}，指令相关文件有:"
+    },
+    {
+      "role": "assistant",
+      "content": "[]"
+    },
+    {
+      "role":"user",
+      "content":"{更改本系统ssh登录密码}，指令相关文件有:"
+    },
+    {
+      "role": "assistant",
+      "content": "['.ssh/config','ssh/ssh_config']"
+    },
+    {
+      "role":"user",
+      "content":"{进入根目录}，指令相关文件有:"
+    },
+    {
+      "role": "assistant",
+      "content": "['/']"
+    },
+    {
+      "role":"user",
+      "content":"{确认一下用户密码文件}，指令相关文件有:"
+    },
+    {
+      "role": "assistant",
+      "content": "['/etc/passwd']"
+    },
+    {
+      "role":"user",
+      "content":"{更改网口设置}，指令相关文件有:"
+    },
+    {
+      "role": "assistant",
+      "content": "['/etc/network/interfaces','/etc/netplan/']"
+    }
+  ]
+}
