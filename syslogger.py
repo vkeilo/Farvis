@@ -10,7 +10,7 @@ logger.setLevel(logging.DEBUG)
 
 # 创建一个控制台处理程序，将日志显示在终端
 console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
+console_handler.setLevel(logging.INFO)
 
 # 创建日志格式器
 log_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')

@@ -18,10 +18,11 @@ def get_file_keywards(task_text) -> list:
     """
     prompt = f"{task_text}，指令相关文件有:"
     file_keywards_generator.prompt_add(prompt)
-    output = file_keywards_generator.prompt_post(remember_flag=False,T=0.001)
+    output = file_keywards_generator.prompt_post(remember_flag=False,T=0.01)
     if not text_regular_check.is_str_list_text(output):
-        logger.error(f"file_keywards_generator output is not str list: {output}")
+        logger.error(f"file_keywards_generator output is not str list: ---{output}---")
         output = []
+        return
     logger.info(f"Determine the relevant file or path: {output}")
     output = eval(output)
     return output

@@ -6,7 +6,7 @@ import re
 
 # 匹配单引号的字符串列表文本   类似： ['hello', 'world', 'python']
 def is_str_list_text(str) -> bool:
-    pattern = re.compile(r"\['[^']+(?:','[^']+)+'\]")
+    pattern = re.compile(r"^\[.*\]$")
     result = re.match(pattern, str)
     matched_flag = result is not None
     return matched_flag

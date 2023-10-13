@@ -2,7 +2,7 @@ import subprocess
 from syslogger import logger
 
 class Mlocate():
-    def __init__(self,threshold = 100):
+    def __init__(self,threshold = 1000):
         # 检查ubuntu中是否安装有mlocate，没有就退出
         self.check_mlocate()
         # 最大的可统计的文件计数阈值，超过了就不计入了
@@ -14,9 +14,9 @@ class Mlocate():
         :param keyword: 关键字
         :return: 返回与关键字相关的文件数量
         """
-        query = "locate -c" + keyword
+        query = "locate -c " + keyword
         output = self.get_mlocate_output(query)
-        logger.info(f"keyword[{keyword}] \trelated files: {output}")
+        logger.info(f"keyword[{keyword}] \trelated files num: {output}")
         return int(output)
 
     def get_related_files_by_keyword(self, keyword):
@@ -51,9 +51,9 @@ class Mlocate():
         检查ubuntu中是否安装有mlocate，没有就抛出异常
         :return: None
         """
-        command = "mlocate"
+        command = "locate -h"
         process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        stdout, stderr = process.communicatat()
+        _, stderr = process.communicate()
         if len(stderr) > 0:
             logger.error("mlocate is not installed")
             exit(1)
@@ -75,43 +75,18 @@ class Mlocate():
         """
         获取mlocate的输出
         :param query: 要搜索的内容
-        :return: 返回一个包含mlocate输出的列表
+        :return: locate 命令语句输出，执行失败就是空字符串
         """
         logger.info(f"running query: {query}")
         command = query
         process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = process.communicate()
         if process.returncode == 0:
-            return stdout
-        
-    def generate_absolute_path_list(self,keywards_list):
-        """
-        获取绝对路径
-        :param path: 要获取绝对路径的路径
-        :return: 返回绝对路径
-        """
-        return os.path.abspath(path)
+            return stdout.decode("utf-8")
+        else:
+            logger.error(f"mlocate query error:{query}")
+            return ""
 
-    def get_file_paths(self,path):
-        """
-        获取文件路径
-        :param path: 要获取文件路径的路径
-        :return: 返回文件路径列表
-        """
-        return glob.glob(path)
+
         
 
-# 运行mlocate命令
-command = "mlocate your_search_query"  # 将your_search_query替换为您要搜索的内容
-process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-stdout, stderr = process.communicate()
-
-# 检查是否有错误
-if process.returncode == 0:
-    # 如果没有错误，stdout包含mlocate的输出
-    mlocate_output = stdout.decode('utf-8')
-    print("mlocate输出:\n", mlocate_output)
-else:
-    # 如果有错误，stderr包含错误信息
-    error_message = stderr.decode('utf-8')
-    print("mlocate命令执行错误:\n", error_message)

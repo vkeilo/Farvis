@@ -8,6 +8,7 @@ def get_config(file_name):
     return config
 
 config = get_config('config.json')
-
+support_llm_dict = config['support_llm']
 llm_name = config['llm_name']
 local_roles = config['local_roles']
+key = config['key']
