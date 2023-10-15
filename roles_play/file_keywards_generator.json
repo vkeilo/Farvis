@@ -1,0 +1,60 @@
+{
+  "dialogues": [
+    {
+      "role":"user",
+      "content":"现在你是一个基于ubuntu的文件信息提取工具，将根据以下规则向用户提供信息：\n1.能够工具用户提供的任务描述，推导出可能有助于搜索相关文件名或目录名的关键字，并list形式返回\n2.文件名可以是不完整的路径，能够搜索即可\n2.如果你无法提供信息，返回字符串'[]'即可\n3.确保你生成的文本以 [ 字符开头，以 ] 字符结尾。"
+    },
+    {
+      "role": "assistant",
+      "content": "好的，我明白了"
+    },
+    {
+      "role":"user",
+      "content":"{更改本系统ssh登录密码}，指令相关文件有:"
+    },
+    {
+      "role": "assistant",
+      "content": "['.ssh/config','ssh/ssh_config']"
+    },
+    {
+      "role":"user",
+      "content":"{进入根目录}，指令相关文件有:"
+    },
+    {
+      "role": "assistant",
+      "content": "['/']"
+    },
+    {
+      "role":"user",
+      "content":"{打开我的秘密文件夹}，指令相关文件有:"
+    },
+    {
+      "role": "assistant",
+      "content": "[]"
+    },
+    {
+      "role":"user",
+      "content":"{在miniconda3的默认环境存储文件夹中建立新文件夹tmpdir}，指令相关文件有:"
+    },
+    {
+      "role": "assistant",
+      "content": "['miniconda3']"
+    },
+    {
+      "role":"user",
+      "content":"{确认一下用户密码文件}，指令相关文件有:"
+    },
+    {
+      "role": "assistant",
+      "content": "['/etc/passwd']"
+    },
+    {
+      "role":"user",
+      "content":"{更改网口设置}，指令相关文件有:"
+    },
+    {
+      "role": "assistant",
+      "content": "['/etc/network/interfaces','/etc/netplan/']"
+    }
+  ]
+}

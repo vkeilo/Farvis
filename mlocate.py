@@ -2,7 +2,7 @@ import subprocess
 from syslogger import logger
 
 class Mlocate():
-    def __init__(self,threshold = 1000):
+    def __init__(self,threshold = 100):
         # 检查ubuntu中是否安装有mlocate，没有就退出
         self.check_mlocate()
         # 最大的可统计的文件计数阈值，超过了就不计入了

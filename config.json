@@ -18,8 +18,10 @@
         }
     },
     "local_roles":{
-        "file_keywards_generator":"file_keywards_generator.json"
-    },    
+        "file_keywards_generator":"roles_play/file_keywards_generator_en.json",
+        "env_var_selector":"roles_play/env_var_selector.json",
+        "task_judge":"roles_play/task_judge.json"
+    },
     
     "llm_name":"chatglm_pro",
     "key":"d818b9db8c2c3c6242d85f4328cf25a8.bgsH0k7BtoWsYd5A"

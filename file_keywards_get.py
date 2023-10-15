@@ -16,14 +16,19 @@ def get_file_keywards(task_text) -> list:
     :task_text: 用户的输入的任务
     :return: 返回与关键字相关的文件或目录名列表
     """
-    prompt = f"{task_text}，指令相关文件有:"
+    prompt = f"{{{task_text}}}，指令相关文件有:"
     file_keywards_generator.prompt_add(prompt)
     output = file_keywards_generator.prompt_post(remember_flag=False,T=0.01)
-    if not text_regular_check.is_str_list_text(output):
+    # if not text_regular_check.is_str_list_text(output):
+    #     logger.error(f"file_keywards_generator output is not str list: ---{output}---")
+    #     output = []
+    #     return output
+    # logger.info(f"Determine the relevant file or path: {output}")
+    try:
+        output = eval(output)
+    except Exception as e:
         logger.error(f"file_keywards_generator output is not str list: ---{output}---")
         output = []
-        return
-    logger.info(f"Determine the relevant file or path: {output}")
-    output = eval(output)
+        return output
     return output
 

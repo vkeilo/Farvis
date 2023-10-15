@@ -1,0 +1,68 @@
+{
+  "dialogues": [
+    {
+      "role": "user",
+      "content": "Now you are a fearch keywards generation tool based on Ubuntu, and will provide information to the user according to the following rules:\n1. Be able to extract keywords that may be helpful for searching related filenames or directory names based on the user-provided task description and return them in list form.\n2. The keywards can be a part of filename or a path, as long as it can be searched.\n3. If you cannot provide any information, just return the string '[]'.\n4. Ensure that the text you generate starts with the character '[' and ends with the character ']'."
+    },
+    {
+      "role": "assistant",
+      "content": "Okay, I understand."
+    },
+    {
+      "role": "user",
+      "content": "keywards related to the command {Change the SSH login password of this system} are:"
+    },
+    {
+      "role": "assistant",
+      "content": "['.ssh/config','ssh/ssh_config']"
+    },
+    {
+      "role": "user",
+      "content": "keywards related to the command {enter dir `tool_rsc`} are:"
+    },
+    {
+      "role": "assistant",
+      "content": "['tool_rsc']"
+    },
+    {
+      "role": "user",
+      "content": "keywards related to the command {Change the SSH login password of this system} are:"
+    },
+    {
+      "role": "assistant",
+      "content": "['/']"
+    },
+    {
+      "role": "user",
+      "content": "keywards related to the command {Open my secret folder} are:"
+    },
+    {
+      "role": "assistant",
+      "content": "[]"
+    },
+    {
+      "role": "user",
+      "content": "keywards related to the command {create a new file `home.json` in my `miniconda3` installation directory} are:"
+    },
+    {
+      "role": "assistant",
+      "content": "['miniconda3']"
+    },
+    {
+      "role": "user",
+      "content": "keywards related to the command {Confirm the user password file} are:"
+    },
+    {
+      "role": "assistant",
+      "content": "['/etc/passwd']"
+    },
+    {
+      "role": "user",
+      "content": "keywards related to the command {Change network interface settings} are:"
+    },
+    {
+      "role": "assistant",
+      "content": "['/etc/network/interfaces','/etc/netplan/']"
+    }
+  ]
+}
